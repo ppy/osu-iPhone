@@ -1,0 +1,271 @@
+0.1.7-1
+(*) Fixed adding of .osu files that are not osu files (Holy Night)
+(*) Fixed touch handling of stacked notes
+(*) Used peppy's osu! iPhone icon as the default icon
+(*) Touching a hit circle out of order 400ms early now does not cause a miss
+
+0.1.6-1
+(+) Added skip button to skip the intro of a song
+(*) No sanity checking anymore for general metadata (more accepting of beatmaps)
+(*) Continuation of potential fix for endless slider sound bug
+(*) Beatmap-specific skin changes now apply to almost every gameplay element (Counting You Up looks correct)
+
+0.1.5-1
+(+) Added followpoint dots
+(*) Top score ranking now shows for the first song after the "Back..." option
+(*) Fixed crash upon downloading a beatmap that isn't found
+(*) Added parsing of percent encodings for older beatmaps listed (such as Linkin Park - What I've Done)
+(*) Fixed HP drain rate calculation problem (for songs that HP drained too fast before). If you have one of these songs, please delete it and re-add it and see if it works better now
+(*) Potential fix for endless spinner sound bug
+
+0.1.4-1
+(+) Display top score ranking on difficulty select screen
+(+) Now uses the AudioLeadIn time so songs don't start immediately if specified in the osu file
+(*) Used Apple-approved method of using shared OpenGL contexts
+(*) Fixed first 10 seconds of sliders not rendering correctly
+(*) Fixed health dropping below 0 at the end of the song
+(*) Potential fix to random endless slider sounds
+(*) Fixed Combo Mu increasing HP even if you miss the entire combo
+
+0.1.3-1
+(+) Added progress bar underneath the score for song progress
+(+) Added slider per endpoint sounds
+(*) Fixed slider rendering
+(*) Combobreak sound only occurs when combo is above 20
+(*) Potential fix for sliders not being rendered after a large number of plays
+
+0.1.2-1
+(+) Custom beatmap specific textures and sounds are now loaded (for instance "Still Alive" uses different textures and "Over the Distance" uses different sounds)
+(*) Fixed race condition that would prevent some maps from progressing to the Ranking screen
+(*) Fixed inherited bpm parsing; should fix several beatmaps having crazy problems (sliders staying on the screen, approach circles growing in size)
+(*) Fixed timing point progression logic error that caused sliders to go at incorrect speeds and improper timing point specific sounds to be played
+
+0.1.1-1
+(+) Added clear button to Search field (dark so hard to see)
+(+) Added clear button to Enter Name field for high scores
+(*) Made default playfield less ugly (use RGBA8888 instead of RGBA4444)
+
+0.1.0-1
+(+) First public Cydia repo release
+(*) Moved beatmaps to the Documents directory for future App Store compatibility
+(*) New copyright, homepage link is used and found to the bottom left of the main menu
+(*) No-fail option hotspot now includes the label
+(*) Options screen background now just black and not same as main menu background
+(*) Updated Default.png
+
+0.0.42-1
+(+) New Homepage button on main menu that launches Safari to the osu! homepage
+(*) Missing the slider start now makes you break your combo
+(*) Missing the slider end now doesn't break the combo
+
+0.0.41-1
+(+) Added combobreak sound
+(+) Added failsound to the song failure process
+(+) Added applause sound for the end of a song
+(+) Added section fail and section pass notification over longer break periods
+(*) Fixed slider rendering issue
+
+0.0.40-1
+(+) Options screen added
+(+) "No-fail" mode added for testing purposes (you won't get high scores if you set it)
+(*) If a beatmap only has one difficulty, go straight to the high score listing for the song selection
+(*) Going "Back..." from difficulty selection now goes to last sorting method (Title or Artist)
+(*) Most textures now loaded with RGBA4444 to help with memory limitations
+(*) Almost all textures are now loaded upon startup
+Please let me know if this build crashes your device, when, and what device you have
+
+0.0.39-1
+(+) Added SettingsManager class, infrastructure for storing settings
+(+) Persistently saves the last name entered for the high score
+(*) Moved freeing of slider textures back to Texture thread (should help some of the stuttering)
+(*) Hit objects directly after a spinner now appear in front of the spinner
+
+0.0.38-1
+(+) Preliminary high score support
+(*) Make search field become first responder
+(*) Ignore download cancel if file is already completely downloaded
+(*) Fixed double counting of combo increase for slider ends
+
+0.0.37-1
+(*) Reduce natural darkening of the background during break periods
+(*) Fixed bug where downloading of more than one beatmap caused a crash
+(*) Modified Animation System a little more for its handling of transformations
+(*) Ranking screen now shown after 3 seconds regardless of whether all Ranking textures have been loaded or not
+(*) Allow spinners to be spun to the left
+
+0.0.36-1
+NOTE: The first time you load this new version will take a while to process all the beatmaps. Subsequent loads will be much faster.
+(+) Added database to store beatmap calculations and high scores
+(+) Store playcount of each osu file
+(+) Put in checks to determine if an osu file has been modified (specifically for high scores and playcount)
+(+) Added stars to the song selection screen
+(+) Added creator to the song selection screen
+(*) Truncate text to first line on song selection screens
+(*) Fixed combo counter from getting "stuck"
+(*) Fixed TimingPoint processing
+(*) Made generic data matching more lenient
+(*) Don't allow the user to cancel a download after it's downloaded and while it's processing
+
+0.0.35-1
+(*) Fixed loading of TimingPoints from v4 osu file formats
+(*) Fixed spinner sound activating when paused
+(*) Fixed displaying spinner bonuses over 9000
+
+0.0.34-1
+(+) Added fading of completed sliders
+(+) When in a break period, don't display life bar/combo
+(*) Completely revamped Animation Subsystem (much more like peppy's style now)
+(*) Game textures now loaded after song selection
+(*) Some textures now stored as RGBA4444 instead of RGBA8888 to help with memory problems
+
+0.0.33-1
+(+) Added play-warningarrow animations
+(+) Added combo mu health increase
+(*) Animation layers now work
+(*) Stopped decreasing health at the end of the song
+
+0.0.32-1
+(+) Added health (you can lose now)
+(*) Fixed spinner bonus resetting bug
+(*) Fixed spinner interaction while paused bug
+
+0.0.31-1
+(*) When sorting by title, display the title first
+(*) Display error if the beatmap song can't be loaded (ie ogg files)
+(*) Display error when running out of memory (doesn't display when running out of memory upon loading)
+
+0.0.30-1
+(+) Added spinner bonus animations
+(+) Added beginnings of life bar support behind the scenes
+(*) Misses now are offset based on stack values
+(*) Internal structural changes and tweakings
+
+0.0.29-1
+(*) Debounce input upon state changes
+(*) Fixed countdown going too fast for some beatmaps
+(*) Faded count3, count2, count1 faster for better visibility at beginning of the song
+(*) Fixed digit spacing issue on HitCircles with numbers > 9
+(*) Added Default.png
+
+0.0.28-1
+(+) Added countdown sequence
+(*) Moved entire gameplay screen up
+(*) Fixed default background bug
+
+0.0.27-1
+(*) Disabled pausing when song is complete and transitioning to Ranking screen (race condition bug)
+
+0.0.26-1
+(*) Fixed crash when a song is successfully downloaded and successfully extracted, but not recognized as a proper beatmap
+(*) When sanity checking the generic data between Osu files within a beatmap, allow the PreviewTime values to be different
+(*) Fixed maxCombo bug
+(*) Fixed ability to interact with sliders while paused
+(*) Fixed bug when retrying while working on a slider or spinner
+
+0.0.25-1
+(*) Fixed texture thread not re-launching upon retry from Ranking screen
+(*) Hopefully fixed problem with retrying where random slider textures wouldn't be created
+
+0.0.24-1
+(+) Added sounds for pause menu buttons and ranking screen buttons
+(*) Fixed first set of sliders not being rendered upon retry
+(*) Lowered texture thread window to 5 seconds
+(*) Put freeing of slider textures into the textureThread (should help with stuttering)
+(*) Put ranking screen initialization into textureThread (should help with stuttering at the end of the song)
+
+0.0.23-1
+(+) Added alert for a successful search query with 0 results
+(+) Added 100k, 300k, and 300g scoring
+(*) Fixed scoring bug
+(*) Fixed song selection screen state transitions
+(*) Fixed displaying of Hit Circle combo numbers more than 9 (instead of wrapping around to 0 again)
+
+0.0.22-2
+(*) Fixed textureThread not running again...
+
+0.0.22-1
+(*) Fixed slider rendering issue if last HitObject is a slider
+(*) Inits / releases ranking textures on demand to save memory
+(+) Added the sliderpoint10 and sliderpoint30 animations
+(+) Added the rest of the spinner graphics / behaviors (spinner-approachcircle, spinner-osu, spinner-spin, spinner-clear)
+(+) Added hitclap sounds
+
+0.0.21-1
+(*) Fixed bug with back-to-back spinners
+
+0.0.20-1
+(*) Attempts to download -novid.osz before the full beatmap in case a beatmap file without a video exists
+(*) Fixed infinite loop rendering bug evident with some very fast sliders
+(+) Added ranking grade to ranking screen
+
+0.0.19-1
+(+) Added ranking screen at the end of the song (note: it's very abruptly right after the last HitObject currently)
+
+0.0.18-2
+(*) Fixed build error where textureThread was not running
+
+0.0.18-1
+(*) Fixed crash if search result returns an empty filename
+
+0.0.17-1
+(+) Added button to cancel downloads in progress
+(+) Added text to show download details
+(+) Added button to delete beatmaps from the selection menu
+(*) Fixed searching bugs
+(*) Fixed beatmap selection bugs
+
+0.0.16-1
+(*) Fixed spinner sound effect problems
+
+0.0.15-1
+(+) Added sound effects to spinners
+(*) Lowered required number of spins for spinners
+
+0.0.14-1
+(*) Fixed crash caused by elusive .osu file parsing bug (example file: Let's Fighting Love)
+(*) Fixed animations lingering into the next song when you quit the current song
+
+0.0.13-1
+(*) Now removes beatmap directory if downloaded file is not a proper zip file (failed extraction)
+(*) Fixed searching problem with multiple words
+
+0.0.12-1
+(+) Added functionality to song selection screen
+(+) Top left two buttons (Search and Newest) are for downloading new beatmaps
+(+) Top right two buttons are for the local beatmaps, sorted by Title or Aritst
+
+0.0.11-1
+(+) Added flick scrolling for song selection
+
+0.0.10-1
+(*) Bumped up hit circle size from 1.2x normal size to 1.5x normal size
+
+0.0.9-1
+(*)Fixed thread priority problem that would cause sound issues and general unpleasantries with the new texture thread
+
+0.0.8-1
+(*) Finally got a Texture thread working so drawing to a texture is now done in another thread. This should ease up on the memory requirements of loading a song, also making load times much faster, without compromising too much the speed of the game.
+
+0.0.7-1
+(*) Attempted semi-fix to drawing to a texture... still far from perfect, but may have better compatibility (fewer songs crash)
+
+0.0.6-1
+(*) Fixed slider start tick detection
+(*) Fixed slider judgement
+(*) Overall slider behavior should be as expected now
+
+0.0.5-1
+(*) Fixed timingPoint propogation error. Sliders should move at proper pace now
+
+0.0.4-1
+(*) Fixed sample rate detection, which fixed more timing issues
+(*) Score animations are now stacked along with their associated hitobjects
+
+0.0.3-1
+(*) More timing tweaks after a good bit of testing
+
+0.0.2-1
+(*) Fixed timing issues (should be generally more in sync now)
+
+0.0.1-1
+(*) Initial priviate Cydia release
